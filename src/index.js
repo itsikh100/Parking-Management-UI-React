@@ -1,17 +1,54 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import  'semantic-ui-css/semantic.min.css';
+import * as CheckForm from "./components/CheckForm";
+import {Button} from "semantic-ui-react";
+import Header from "./components/Header";
+import Empty from "./components/Empty";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+class App extends Component {
+  state = {
+    selectedButtonType: ''
+  };
+
+  render(){
+
+    console.log(this.state.selectedButtonType);
+      return(
+          <div>
+          {this.renderButtons()}
+          {this.renderSelectedButton(this.state.selectedButtonType)}
+      </div>
+      );
+  }
+
+  renderButtons(){
+    return(
+      <div>
+      <Header />
+      <Button.Group className="checkButton">
+        <Button onClick={e => {this.setState({ selectedButtonType: e.target.textContent})}} positive>Checkin</Button>
+        <Button.Or />
+        <Button onClick={e => {this.setState({ selectedButtonType: e.target.textContent})}}>Checkout</Button>
+        <Button.Or />
+        <Button onClick={e => {this.setState({ selectedButtonType: e.target.textContent})}} positive>Status</Button>
+      </Button.Group>     
+      </div>
+      
+    );
+  }
+
+  renderSelectedButton(selectedButtonType){
+    if(!selectedButtonType)
+      return <Empty />
+
+    const Check = CheckForm[selectedButtonType];
+
+    return <Check />
+  }
+}
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);

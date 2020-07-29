@@ -1,0 +1,86 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  html {
+    font-family: "Montserrat", sans-serif;
+    height: 100%;
+    margin: 0;
+  }
+  body {
+    text-align: center;
+    background: #eee;
+    height: 100%;
+    margin: 0;
+    padding: 0 16px;
+  }
+  form.CreateParking {
+    position: relative;
+    width: 480px;
+    margin: 10px auto 10px auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 7px;
+    background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+    box-shadow: 0 1px 5px rgb(138, 137, 137);
+  }
+  form.DeleteParking {
+    position: relative;
+    width: 480px; 
+    margin: 10px auto 10px auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 7px;
+    background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+    box-shadow: 0 1px 5px rgb(138, 137, 137);
+  }
+  form.ParkingStatus {
+    position: relative;
+    text-align: center;
+    width: 480px;
+    margin: 10px auto 10px auto;
+    background: #fff;
+    padding: 15px;
+    background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+    border-radius: 7px;
+    box-shadow: 0 1px 5px rgb(138, 137, 137);
+  }
+  .checkButton {
+      padding: 20px;
+      text-align: center;
+      margin-left: auto;
+      padding-left: 40%;
+  }
+  #root {
+    background: #eee;
+    padding: 0 16px;
+  }
+  #message {
+      text-align: center;
+  }
+  .emptyComponent {
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;  
+  }
+  header {
+    background-color: #21ba45;
+    margin: auto -16px;
+    padding: 16px 32px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    text-align: center;
+  }
+  .ParkNote {
+    position: relative;
+    width: 300px;
+    margin: 10px auto 10px auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 7px;
+    box-shadow: 0 1px 5px rgb(138, 137, 137);
+    text-align: center;
+  }
+
+  
